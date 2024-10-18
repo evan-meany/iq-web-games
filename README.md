@@ -31,6 +31,21 @@ node app.js
 npm install -g nodemon
 nodemon app.js
 ```
+- It is common to use React to handle the front end of websites
+- To setup React within the project run this command from root:
+```
+npx create-react-app client
+```
+- I moved the server related things into the server folder and the client related things into the client folder
+- I added a new package.json at the root that uses npm workspaces to essentially run npm install recursively. To use it run this from root:
+```
+npm install
+```
+- To use the client side on the server (or serve it to the server), first the client side needs to be build with:
+```
+npm run build --prefix client
+```
+- This command will create build files in the client/build directory
 
 ## Notes on project structure
 
