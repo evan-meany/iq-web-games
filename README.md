@@ -1,5 +1,17 @@
 # iq-web-games
 
+## How to setup project
+
+- First clone the repo and ensure node.js is installed from here: https://nodejs.org/en
+- To setup all the needed modules (as defined in the package.json files) run from root:
+```
+npm install
+```
+- To standup the client and server run from root:
+```
+npm run dev
+```
+
 ## Notes on creation of project
 
 - First installed node.js from here: https://nodejs.org/en
@@ -46,8 +58,16 @@ npm install
 npm run build --prefix client
 ```
 - This command will create build files in the client/build directory
+- To run both the server and the client at the same time concurrently should be used:
+```
+npm install concurrently --save-dev
+```
+- I added new scripts to the root package.json that will handle standing up client and server. To run the script:
+```
+npm run dev
+```
 
-## Notes on project structure
+## Notes on hot reload
 
-- Main app logic in app.js
-- HTML and CSS are in the public directory within index.html and styles.css respectively
+- React natively support hot reloading changes made. This means that if changes are made to files they need only be saved whilst the client is running and they will automatically be applied to the website.
+- Server side hot reloading is supported through nodemon. The main 'npm run server' script employs nodemon to allow for hot reloading in this way.
